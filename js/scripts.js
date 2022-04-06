@@ -27,6 +27,12 @@ const agregarAlCarrito = (idProducto) => {
     //actualizar storage del carrito
     localStorage.setItem("carrito",JSON.stringify(carrito));
 
+    swal({
+        title: `Agregaste ${productoAgregado.titulo} a tu carrito`,
+        text: "Ya sos uno mas de La Cancha!",
+        icon: "success",
+        button: "Continuar comprando",
+      });
 };
 
 generarCards(productos);

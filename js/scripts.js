@@ -6,13 +6,9 @@ const carrito = carritoStorage;
     //actualizando el html
     document.getElementById("cantidad-prod").innerHTML = "$"+ productoAgregado.precio * productoAgregado.cantidad;
 
-const productos = [
-    { id: 1, titulo: "Zapatillas nike", precio: 10000, sotck: 4, imagen:'https://sporting.vteximg.com.br/arquivos/ids/463079-1000-1000/4CU4870-001-1.jpg?v=637792542277530000'},
-    { id: 2, titulo: "Zapatillas adidas", precio: 12000, sotck: 3, imagen:'https://sporting.vteximg.com.br/arquivos/ids/427634-1000-1000/6FX3603-000-1.jpg?v=637740551876100000'},
-    { id: 3, titulo: "Zapatillas Salomon", precio: 9000, sotck: 2, imagen:'https://sporting.vteximg.com.br/arquivos/ids/356131-1000-1000/1773325-000-1.jpg?v=637659181552500000'},
-    { id: 4, titulo: "Zapatillas underarmour", precio: 14000, sotck: 0, imagen:'https://sporting.vteximg.com.br/arquivos/ids/466231-1000-1000/UAC0126-001-1.jpg?v=637799164231170000'},
-    { id: 5, titulo: "Zapatillas asics", precio: 15000, sotck: 0, imagen:'https://sporting.vteximg.com.br/arquivos/ids/502131-1500-1500/1011B405-003-1.jpg?v=637847662013870000'},
-];
+fetch("/sitio.json")
+.then((response) => response.json())
+.then((data) => generarCardsHTML(data.productos))
 
 const agregarAlCarrito = (idProducto) => {
     const valorDeCantidad = document.getElementById(`cantidad-${idProducto}`).value;
@@ -58,7 +54,7 @@ generarCards(productosDeMayorPrecio);
 
 function generarCards(porductosAMostrar){
     let acumuladorDeCards = ``;
-    porductosAMostrar.forEach(elementoDelArray) => {
+    porductosAMostrar.forEach(elementoDelArray); {
 
     acumuladorDeCards += `<div class="card h-100">
     <!-- Sale badge-->

@@ -54,7 +54,7 @@ generarCards(productosDeMayorPrecio);
 
 function generarCards(porductosAMostrar){
     let acumuladorDeCards = ``;
-    porductosAMostrar.forEach(elementoDelArray); {
+    porductosAMostrar.forEach((elementoDelArray)); {
 
     acumuladorDeCards += `<div class="card h-100">
     <!-- Sale badge-->
